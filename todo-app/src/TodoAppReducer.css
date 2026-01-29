@@ -1,0 +1,189 @@
+/* Modern Todo App Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#root {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #000;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+h3 {
+  color: #333;
+  font-size: 1.3rem;
+  margin: 30px 0 15px 0;
+  font-weight: 600;
+}
+
+/* Input Container */
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fff;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]::placeholder {
+  color: #999;
+}
+
+/* Add Button */
+button {
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: #222;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Todo List */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul:empty::after {
+  content: "No todos yet. Add one above! 🎯";
+  display: block;
+  text-align: center;
+  color: #999;
+  padding: 40px 20px;
+  font-size: 1.1rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+li:hover {
+  border-color: #000;
+  background: #f8f9fa;
+  transform: translateX(5px);
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+li p {
+  flex: 1;
+  color: #333;
+  font-size: 1.05rem;
+  word-break: break-word;
+  margin: 0;
+}
+
+/* Remove Button */
+li button {
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  background: #ff6b6b;
+  border-radius: 8px;
+  min-width: 40px;
+  flex-shrink: 0;
+}
+
+li button:hover {
+  background: #ff5252;
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  #root {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  input[type="text"],
+  button {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+
+  li {
+    padding: 12px 15px;
+  }
+
+  li p {
+    font-size: 1rem;
+  }
+}
